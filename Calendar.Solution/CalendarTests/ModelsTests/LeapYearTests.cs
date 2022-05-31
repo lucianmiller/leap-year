@@ -17,14 +17,21 @@ namespace CalendarTests
     public void IsLeapYear_NumberDivisibleByFour_False()
     {
       LeapYear testLeapYear = new LeapYear();
-      Assert.AreEqual(false, testLeapYear(1999));
+      Assert.AreEqual(false, testLeapYear.IsLeapYear(1999));
     }
 
     [TestMethod]
     public void IsLeapYear_MultiplesOfOneHundred_False()
     {
       LeapYear testLeapYear = new LeapYear();
-      Assert.AreEqual(false, testLeapYear(1900));
+      Assert.AreEqual(false, testLeapYear.IsLeapYear(1900));
+    }
+
+    [TestMethod]
+    public void IsLeapYear_MultiplesOfFourHundred_True()
+    {
+      LeapYear testLeapYear = new LeapYear();
+      Assert.AreEqual(true, testLeapYear.IsLeapYear(2000));
     }
   }
 }
